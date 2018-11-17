@@ -3,6 +3,7 @@ CREATE TABLE usuario (
 	nome VARCHAR(30) NOT NULL,
 	email VARCHAR NOT NULL,
 	senha VARCHAR NOT NULL,
+	salt VARCHAR NOT NULL,
 	data DATE,
 
 	PRIMARY KEY (id)
