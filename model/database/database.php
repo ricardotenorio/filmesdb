@@ -8,7 +8,7 @@
 	    private static $dbUserPassword = 'root';
 	     
 	    private static $conn  = null;
-	     
+	    
 
 		#Singleton
 		private function __construct() {
@@ -30,7 +30,7 @@
 	     
 	    public static function disconnect() {
 	        self::$conn = null;
-	    }
+	    
 	}	
 
         
