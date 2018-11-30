@@ -6,4 +6,7 @@
 
 	$usuario = verificarUsuario::verificarLogin($nome, $senha);
 
-	var_dump($usuario);
+	if($usuario){
+		$msg = "Bem vindo";
+		header("Location: ../page/home.php?msg=$msg");
+	}
