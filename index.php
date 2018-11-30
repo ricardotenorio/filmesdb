@@ -1,7 +1,3 @@
-<?php 
-		require 'cadastro.php';
- ?>
-
  <html>
  <head>
  	<title>teste cadastro</title>
