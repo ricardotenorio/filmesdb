@@ -1,24 +1,20 @@
 <?php 
-	require_once '../model/filme.php';
-	$filmes = Filme::listar();
-
-	if (!empty($filmes)) {
-
-	}
- ?>
-
- <!DOCTYPE html>
- <html>
- <head>
- 	<title>Filmes</title>
- </head>
- <body>
- 	<div class="filmes">
- 		<div class="titulo"></div>
- 		<div class="ano"></div>
- 		<div class="duracao"></div>
- 		<div class="ano"></div>
- 	</div>
- 
- </body>
- </html>
+	require_once '../model/filme.php';	
+	$filmes = (array)Filme::listar();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>filmes</title>
+</head>
+<body>
+	<?php foreach ($filmes as $f): ?>
+	<div class="filmes">
+	 	<div class="titulo"><?php echo $f['titulo']; ?></div>
+	 	<div class="ano"><?php echo $f['ano']; ?></div>
+	 	<div class="duracao"><?php echo $f['duracao']; ?></div>
+	 	<div class="genero"><?php echo $f['nome'] ?></div>
+	</div>
+	<?php endforeach; ?>
+</body>
+</html>
