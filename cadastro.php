@@ -12,9 +12,8 @@
 			VALUES( :nome, :email, :senha, :salt, NOW() )');
 		$stmt->execute(array(
 			':nome' => "$nome", ':email' => "$email", 'senha' => "$senha", ':salt' => 'teste'));
-	} catch(PDOException $e) {
+	} catch(Exception $e) {
 		echo 'Error....' . $e->getMessage();
-		echo 'errrrroooor';
 	}
 
  ?>
