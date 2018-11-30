@@ -12,7 +12,7 @@ CREATE TABLE usuario (
 CREATE TABLE filme (
 	id INT NOT NULL AUTO_INCREMENT,
 	titulo VARCHAR(200) NOT NULL,
-	ano DATE,
+	ano YEAR,
 	duracao TIME,
 
 	PRIMARY KEY (id)
