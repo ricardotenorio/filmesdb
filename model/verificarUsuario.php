@@ -17,7 +17,7 @@
 		}
 
 		// verifica informações do login. R-> usuário ou false
-		public static function verificarLogin( $nome, $senha ){
+		public static function login( $nome, $senha ){
 			self::initialize();
 			try{
 				$conn = Database::connect();

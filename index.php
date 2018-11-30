@@ -3,7 +3,8 @@
  	<title>teste cadastro</title>
  </head>
  <body>
- 	<form action="cadastro.php" method="post">
+ 	<h1>Cadastro</h1>
+ 	<form action="./model/cadastro.php" method="post">
  		<label>Nome de Usuário:</label>
  		<input type="text" name="nome" />
  		<label>Email:</label>
@@ -15,7 +16,7 @@
  		<input type="submit" name="submit" Value="Enviar" />
  	</form>
 
- 	<h1>login</h1>
+ 	<h1>Login</h1>
  	<form action="./model/login.php" method="post">
  		<label>Nome de Usuário:</label>
  		<input type="text" name="nome" />
