@@ -7,6 +7,8 @@
 	require_once 'database/database.php';
 	require_once 'verificarUsuario.php';
 	require_once 'sessao.php';
+	require_once 'listaFilmes.php';
+
 
 	if (!VerificarUsuario::verificarNome($nome)) {
 		echo 'Nome em uso';
@@ -21,6 +23,8 @@
 			$stmt->execute(array(
 				':nome' => "$nome", ':email' => "$email", 'senha' => "$senha", ':salt' => 'teste'));
 			$usuario = VerificarUsuario::login($nome, $senha);
+			//cria lista de favoritos do usuário ao fazer o cadastro
+			Lista::criarLista($usuario);
 			//inicia a sessão
 			iniciar($usuario);
 
