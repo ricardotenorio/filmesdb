@@ -23,8 +23,9 @@
 			$stmt->execute(array(
 				':nome' => "$nome", ':email' => "$email", 'senha' => "$senha", ':salt' => 'teste'));
 			$usuario = VerificarUsuario::login($nome, $senha);
+			
 			//cria lista de favoritos do usuário ao fazer o cadastro
-			Lista::criarLista($usuario);
+			Lista::criarLista($usuario['id']);
 			//inicia a sessão
 			iniciar($usuario);
 

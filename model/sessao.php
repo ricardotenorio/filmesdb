@@ -3,7 +3,7 @@
 
 	function iniciar($usuario) {
 		session_start();
-		$lista = Lista::getLista($usuario);
+		$lista = Lista::getLista($usuario['id']);
 
 		if ($usuario) {
 			$_SESSION['user_id'] = $usuario['id'];
