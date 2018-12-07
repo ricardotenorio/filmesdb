@@ -38,7 +38,7 @@
 			try{
 				$conn = Database::connect();
 				$stmt = $conn->prepare("SELECT f.id, f.titulo, f.ano, f.duracao, g.nome FROM filme AS f JOIN genero AS g JOIN filme_genero AS fg WHERE f.id = fg.id_filme AND g.id = fg.id_genero AND g.nome = :genero ORDER BY f.titulo");
-				$stmt->execute();
+				$stmt->execute(['genero' = $genero]);
 				$filmes = null;
 
 				while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {

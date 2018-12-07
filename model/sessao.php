@@ -7,6 +7,7 @@
 			$_SESSION['user_id'] = $usuario['id'];
 			$_SESSION['user_name'] = $usuario['nome'];
 			$_SESSION['user_email'] = $usuario['email'];
+			$_SESSION['user_creation'] = $usuario['data']
 			return true;
 		} else {
 			echo "Usuário inválido";

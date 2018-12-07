@@ -21,6 +21,7 @@
 			$stmt->execute(array(
 				':nome' => "$nome", ':email' => "$email", 'senha' => "$senha", ':salt' => 'teste'));
 			$usuario = VerificarUsuario::login($nome, $senha);
+			//inicia a sessão
 			iniciar($usuario);
 
 			$msg = 'Cadastro realizado com sucesso';
