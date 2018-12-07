@@ -74,10 +74,10 @@
 
 		public static function getListaConteudo($listaId) {
 			self::initialize();
-			try{
+			try {
 				$conn = Database::connect();
 				$stmt = $conn->prepare("SELECT f.id, f.titulo, f.ano, f.duracao FROM lista_filme AS l JOIN filme AS f WHERE l.id_lista = :id_lista AND l.id_filme = f.id");
-				$stmt->execute(['id_lista' => $listaId);
+				$stmt->execute(['id_lista' => $listaId]);
 				$filmes = null;
 
 				while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -90,4 +90,5 @@
 				return null;
 			}
 		}
+	}
  ?>
