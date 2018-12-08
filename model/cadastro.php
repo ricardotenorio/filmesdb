@@ -11,9 +11,13 @@
 
 
 	if (!VerificarUsuario::verificarNome($nome)) {
-		echo 'Nome em uso';
+		$msg = 'Nome em uso';
+		header("Location: ../index.php?msgCadastro=$msg");
+		exit;
 	} elseif (!VerificarUsuario::verificarEmail($email)) {
-		echo 'email em uso';
+		$msg = 'email em uso';
+		header("Location: ../index.php?msgCadastro=$msg");
+		exit;
 	} else {
 
 		try {

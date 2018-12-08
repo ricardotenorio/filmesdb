@@ -1,5 +1,6 @@
 <?php 
-	require_once '../model/listaFilme.php';	
+	session_start();
+	require_once '../model/listaFilmes.php';	
 	$filmes = (array)Lista::getListaConteudo($_SESSION['user_id']);
 ?>
 <!DOCTYPE html>

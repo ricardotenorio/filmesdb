@@ -14,6 +14,7 @@
 		header("Location: ../page/home.php?msg=$msg");
 		exit;
 	} else {
-		$msg = "Nome de usuário ou senha inválidos!"; 
-		header("Location: ../index.php");
+		$msg =  urlencode("Nome de usuário ou senha inválidos!"); 
+		header("Location: ../index.php?msgLogin=$msg");
+		exit;
 	}
