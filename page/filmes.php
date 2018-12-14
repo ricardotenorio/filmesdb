@@ -1,5 +1,6 @@
 <?php 
-	require_once '../model/filme.php';	
+  session_start();
+	require_once '../model/filme.php';
 	$filmes = (array)Filme::listar();
 ?>
 <!DOCTYPE html>
@@ -11,9 +12,9 @@
 	        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	        <!-- Bootstrap CSS -->
-	        <link rel="stylesheet" href="page/template/TemplateBootstrap/node_modules/bootstrap/compiler/bootstrap.css">
+	        <link rel="stylesheet" href="template/TemplateBootstrap/node_modules/bootstrap/compiler/bootstrap.css">
 
-	        <link rel="stylesheet" href="page/template/TemplateBootstrap/style/css/style.css">
+	        <link rel="stylesheet" href="template/TemplateBootstrap/style/css/style.css">
 
 	        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
@@ -39,7 +40,7 @@
           <nav class="navbar navbar-expand-lg navbar-light bg-gradient-primary">
             
             <div class="container">
-              <a class="navbar-brand" h1 mb-0 href="index.php">FilmesDB</a>
+              <a class="navbar-brand" h1 mb-0 href="../index.php">FilmesDB</a>
 
               <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#navbarSite"></button>
                 <span class="navbar-toggler-icon"></span>
@@ -49,16 +50,16 @@
                     <ul class="navbar-nav mr-auto">
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link" href="index.php">Inicio</a>
+                        <a class="nav-link" href="../index.php">Inicio</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#page/favoritos.php">Favoritos</a>
+                        <a class="nav-link" href="favoritos.php">Favoritos</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">Serviços</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="page/filmes.php">Filmes</a>
+                        <a class="nav-link" href="filmes.php">Filmes</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">Contatos</a>
@@ -93,6 +94,14 @@
 		 	<div class="ano"><?php echo $f['ano']; ?></div>
 		 	<div class="duracao"><?php echo $f['duracao']; ?></div>
 		 	<div class="genero"><?php echo $f['nome'] ?></div>
+      
+      <form action="../model/adicionarFavorito" method="post">
+      <input type="hidden" name="filme-id" value="<?php echo $f['id']; ?>">
+      <?php 
+        if ($_SESSION['user_id'] != null) {
+          echo '<input type="submit" name="adicionar" value="Adicionar">';
+        } ?>
+      </form>
 		</div>
 		<?php endforeach; ?>
 	</body>
