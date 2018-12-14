@@ -15,6 +15,30 @@
         	self::$initialized = true;
 		}
 
+		public static function adicionar($filme){
+			self::initialize();
+			try{
+				$conn = Database::connect();
+				$stmt = $conn->prepare("INSERT INTO filme ( titulo, ano, duracao ) 
+					VALUES( :titulo, :ano, :duracao )");
+				$stmt->execute(array( ':titulo' => $filme["nome"], ':ano' => $filme["ano"], ':duracao' => $filme["duracao"] ));
+			} catch(Exception $e) {
+				echo "Error..." . $e->getMessage();
+			}
+		}
+
+		public static function adicionarFilmeGenero($filme, $genero){
+			self::initialize();
+			try{
+				$conn = Database::connect();
+				$stmt = $conn->prepare("INSERT INTO filme_genero ( id_filme, id_genero ) 
+					VALUES( :id_filme, :id_genero )");
+				$stmt->execute(array( ':id_filme' => $filme, ':id_genero' => $genero ));
+			} catch(Exception $e) {
+				echo "Error..." . $e->getMessage();
+			}
+		}
+
 		public static function listar(){
 			self::initialize();
 			try{
