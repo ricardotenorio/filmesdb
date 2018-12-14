@@ -95,7 +95,7 @@
 		 	<div class="duracao"><?php echo $f['duracao']; ?></div>
 		 	<div class="genero"><?php echo $f['nome'] ?></div>
       
-      <form action="../model/adicionarFavorito" method="post">
+      <form action="../model/adicionarFavorito.php" method="post">
       <input type="hidden" name="filme-id" value="<?php echo $f['id']; ?>">
       <?php 
         if ($_SESSION['user_id'] != null) {
