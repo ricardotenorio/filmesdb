@@ -4,6 +4,8 @@
 	$email = $_POST["email"];
 	$senha = $_POST["senha"];
 
+	$debug = $nome.$email.$senha;
+
 	require_once 'database/database.php';
 	require_once 'verificarUsuario.php';
 	require_once 'sessao.php';
@@ -37,7 +39,7 @@
 			header("Location: ../page/home.php?msg=$msg");
 			exit;
 		} catch(Exception $e) {
-			echo 'Error....' . $e->getMessage();
+			echo 'Error....' . $e->getMessage(). $debug;
 		}
 	}
  ?>

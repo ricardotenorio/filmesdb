@@ -269,14 +269,14 @@
                       <div class="form-group col-sm-4">
 
                         <label for="inputNome">Seu nome</label>
-                        <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+                        <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="nome">
 
                       </div>
 
                       <div class="form-group col-sm-4">
                         
                         <label for="inputEmail">Seu email</label>
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="email">
 
                       </div>
 
@@ -287,14 +287,14 @@
                       <div class="form-group col-sm-4">
                         
                         <label for="inputSenha">Sua senha</label>
-                        <input type="password" class="form-control" id="inputSenha" placeholder="Senha">
+                        <input type="password" class="form-control" id="inputSenha" placeholder="Senha" name="senha">
 
                       </div>
 
                       <div class="form-group col-sm-4">
                         
                         <label for="inputConfirmarSenha">Confirmar senha</label>
-                        <input type="password" class="form-control" id="inputConfirmarSenha" placeholder="Confirmar senha">
+                        <input type="password" class="form-control" id="inputConfirmarSenha" placeholder="Confirmar senha" name="cfm-senha">
                       
                       </div>
                       
@@ -351,14 +351,14 @@
                       <div class="form-group col-sm-4">
 
                         <label for="inputUser">Nome de usuário</label>
-                        <input type="text" class="form-control" id="inputUser" placeholder="Nome">
+                        <input type="text" class="form-control" id="inputUser" placeholder="Nome" name="nome">
 
                       </div>
 
                       <div class="form-group col-sm-4">
                         
                         <label for="inputSenhaUser">Sua senha</label>
-                        <input type="password" class="form-control" id="inputSenhaUser" placeholder="Senha">
+                        <input type="password" class="form-control" id="inputSenhaUser" placeholder="Senha" name="senha">
 
                       </div>
 

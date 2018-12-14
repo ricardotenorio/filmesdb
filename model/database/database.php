@@ -5,7 +5,7 @@
 		private static $dbName = 'filmesdb';
 		private static $dbHost = 'localhost';
 		private static $dbUsername = 'root';
-		private static $dbUserPassword = 'ifpe';
+		private static $dbUserPassword = 'root';
 		private static $conn = null;
 		private static $initialized = false;
 
